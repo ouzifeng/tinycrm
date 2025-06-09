@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - TinyCRM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .team-card {
+        background: white;
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--shadow-md);
+        transition: all 0.3s ease;
+      }
+
+      .team-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .team-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--primary-dark)
+        );
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+        font-weight: 600;
+      }
+
+      .team-name {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .team-role {
+        color: var(--primary-color);
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .team-bio {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .team-social {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .team-social a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--surface-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .team-social a:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        color: var(--text-secondary);
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-chart-line"></i>
+          <span>TinyCRM</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="features.html" class="nav-link">Features</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="login.html" class="nav-link login-btn">Login</a></li>
+          <li><a href="signup.html" class="nav-link signup-btn">Sign Up</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" style="min-height: 60vh; padding: 120px 0 60px">
+        <div class="container">
+          <div
+            class="hero-content"
+            style="grid-template-columns: 1fr; text-align: center; gap: 2rem"
+          >
+            <div class="hero-text">
+              <h1 class="hero-title" style="font-size: 3rem">
+                Making CRM simple for everyone
+              </h1>
+              <p class="hero-subtitle">
+                We believe that powerful software shouldn't be complicated.
+                That's why we built TinyCRM to be the simplest, most intuitive
+                CRM you'll ever use.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section style="padding: 80px 0; background: white">
+        <div class="container">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 4rem;
+              align-items: center;
+            "
+          >
+            <div>
+              <h2
+                style="
+                  font-size: 2.5rem;
+                  margin-bottom: 1.5rem;
+                  color: var(--text-primary);
+                "
+              >
+                Our Mission
+              </h2>
+              <p
+                style="
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                  color: var(--text-secondary);
+                  margin-bottom: 2rem;
+                "
+              >
+                We started TinyCRM because we were frustrated with the
+                complexity of existing CRM solutions. Too many features,
+                confusing interfaces, and steep learning curves were preventing
+                teams from actually using their CRM effectively.
+              </p>
+              <p
+                style="
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                  color: var(--text-secondary);
+                "
+              >
+                Our mission is to create software that gets out of your way and
+                lets you focus on what matters most: building relationships with
+                your customers and growing your business.
+              </p>
+            </div>
+            <div style="text-align: center">
+              <div
+                style="
+                  background: var(--surface-color);
+                  padding: 3rem;
+                  border-radius: var(--radius-lg);
+                "
+              >
+                <i
+                  class="fas fa-heart"
+                  style="
+                    font-size: 4rem;
+                    color: var(--primary-color);
+                    margin-bottom: 1rem;
+                  "
+                ></i>
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem">
+                  Built with love
+                </h3>
+                <p style="color: var(--text-secondary)">
+                  Every feature is carefully crafted with user experience in
+                  mind
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section style="padding: 80px 0; background: var(--surface-color)">
+        <div class="container">
+          <h2 class="section-title">TinyCRM by the numbers</h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">10K+</div>
+              <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">500M+</div>
+              <div class="stat-label">Contacts Managed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">99.9%</div>
+              <div class="stat-label">Uptime</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Support Available</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section style="padding: 80px 0; background: white">
+        <div class="container">
+          <h2 class="section-title">Meet our team</h2>
+          <div class="team-grid">
+            <div class="team-card fade-in-up">
+              <div class="team-avatar">JS</div>
+              <div class="team-name">Jane Smith</div>
+              <div class="team-role">CEO & Co-founder</div>
+              <div class="team-bio">
+                Jane has over 10 years of experience in SaaS and is passionate
+                about building products that solve real problems for growing
+                businesses.
+              </div>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+
+            <div class="team-card fade-in-up delay-1">
+              <div class="team-avatar">MD</div>
+              <div class="team-name">Mike Davis</div>
+              <div class="team-role">CTO & Co-founder</div>
+              <div class="team-bio">
+                Mike is a full-stack engineer who previously worked at Google
+                and Stripe. He loves building scalable, reliable systems that
+                just work.
+              </div>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+
+            <div class="team-card fade-in-up delay-2">
+              <div class="team-avatar">SL</div>
+              <div class="team-name">Sarah Lee</div>
+              <div class="team-role">Head of Design</div>
+              <div class="team-bio">
+                Sarah is a UX/UI designer with a background in psychology. She
+                ensures that every interaction in TinyCRM feels intuitive and
+                delightful.
+              </div>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+
+            <div class="team-card fade-in-up">
+              <div class="team-avatar">AJ</div>
+              <div class="team-name">Alex Johnson</div>
+              <div class="team-role">Head of Customer Success</div>
+              <div class="team-bio">
+                Alex ensures that every TinyCRM customer gets the most value
+                from our platform. Previously led customer success at Zendesk.
+              </div>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values Section -->
+      <section style="padding: 80px 0; background: var(--surface-color)">
+        <div class="container">
+          <h2 class="section-title">Our values</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h3>Simplicity First</h3>
+              <p>
+                We believe that the best solutions are often the simplest ones.
+                Every feature must earn its place.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Customer Obsessed</h3>
+              <p>
+                Our customers' success is our success. We listen, learn, and
+                build based on real user feedback.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3>Trust & Transparency</h3>
+              <p>
+                We're open about our practices, pricing, and policies. Your data
+                is safe and your privacy is respected.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to join thousands of happy customers?</h2>
+            <p>
+              Experience the simplest CRM you'll ever use with our 14-day free
+              trial.
+            </p>
+            <a href="signup.html" class="btn btn-primary btn-large"
+              >Start Your Free Trial</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <i class="fas fa-chart-line"></i>
+              <span>TinyCRM</span>
+            </div>
+            <p>
+              The simplest CRM you'll ever use. Manage contacts, deals, and
+              follow-ups without the bloat.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">Integrations</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Status</a></li>
+              <li><a href="#">Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            <p>&copy; 2024 TinyCRM. All rights reserved.</p>
+          </div>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

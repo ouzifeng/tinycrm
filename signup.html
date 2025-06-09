@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - TinyCRM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="auth-card fade-in">
+        <div class="auth-header">
+          <div class="auth-logo">
+            <i class="fas fa-chart-line"></i>
+            <span>TinyCRM</span>
+          </div>
+          <h1 class="auth-title">Create your account</h1>
+          <p class="auth-subtitle">Get started with your 14-day free trial</p>
+        </div>
+
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="fullName" class="form-label">Full name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              class="form-input"
+              required
+              placeholder="John Doe"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Work email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              required
+              placeholder="john@company.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="company" class="form-label">Company name</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              class="form-input"
+              placeholder="Acme Inc."
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <div style="position: relative">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-input"
+                required
+                placeholder="••••••••"
+                minlength="8"
+              />
+              <button
+                type="button"
+                style="
+                  position: absolute;
+                  right: 12px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  background: none;
+                  border: none;
+                  color: var(--text-secondary);
+                  cursor: pointer;
+                  padding: 4px;
+                "
+                onclick="togglePassword()"
+              >
+                <i class="fas fa-eye" id="toggleIcon"></i>
+              </button>
+            </div>
+            <div style="margin-top: 0.5rem">
+              <div class="password-strength" id="passwordStrength">
+                <div class="strength-bar">
+                  <div class="strength-fill" id="strengthFill"></div>
+                </div>
+                <span class="strength-text" id="strengthText"
+                  >Password strength</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword" class="form-label"
+              >Confirm password</label
+            >
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              class="form-input"
+              required
+              placeholder="••••••••"
+            />
+          </div>
+
+          <div style="margin-bottom: 2rem">
+            <label
+              style="
+                display: flex;
+                align-items: flex-start;
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+                line-height: 1.4;
+              "
+            >
+              <input
+                type="checkbox"
+                style="margin-right: 0.5rem; margin-top: 0.1rem"
+                required
+              />
+              <span
+                >I agree to TinyCRM's
+                <a
+                  href="#"
+                  style="color: var(--primary-color); text-decoration: none"
+                  >Terms of Service</a
+                >
+                and
+                <a
+                  href="#"
+                  style="color: var(--primary-color); text-decoration: none"
+                  >Privacy Policy</a
+                ></span
+              >
+            </label>
+          </div>
+
+          <div style="margin-bottom: 1.5rem">
+            <label
+              style="
+                display: flex;
+                align-items: center;
+                font-size: 0.9rem;
+                color: var(--text-secondary);
+              "
+            >
+              <input type="checkbox" style="margin-right: 0.5rem" />
+              I'd like to receive product updates and marketing emails
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary"
+            style="width: 100%; margin-bottom: 1.5rem"
+          >
+            Create Account
+          </button>
+
+          <div style="text-align: center; margin-bottom: 1.5rem">
+            <span style="color: var(--text-secondary); font-size: 0.9rem"
+              >or</span
+            >
+          </div>
+
+          <button
+            type="button"
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              border: 2px solid var(--border-color);
+              border-radius: var(--radius-md);
+              background: white;
+              color: var(--text-primary);
+              font-weight: 500;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0.5rem;
+              margin-bottom: 1rem;
+            "
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24">
+              <path
+                fill="#4285f4"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+              />
+              <path
+                fill="#34a853"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+              />
+              <path
+                fill="#fbbc05"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+              />
+              <path
+                fill="#ea4335"
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+              />
+            </svg>
+            Sign up with Google
+          </button>
+
+          <button
+            type="button"
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              border: 2px solid var(--border-color);
+              border-radius: var(--radius-md);
+              background: white;
+              color: var(--text-primary);
+              font-weight: 500;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0.5rem;
+            "
+          >
+            <i class="fab fa-microsoft" style="color: #00a1f1"></i>
+            Sign up with Microsoft
+          </button>
+        </form>
+
+        <div class="auth-footer">
+          <p style="color: var(--text-secondary)">
+            Already have an account?
+            <a href="login.html">Sign in</a>
+          </p>
+        </div>
+      </div>
+
+      <div style="position: absolute; top: 2rem; left: 2rem">
+        <a
+          href="index.html"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+          "
+        >
+          <i class="fas fa-arrow-left"></i>
+          Back to home
+        </a>
+      </div>
+    </div>
+
+    <style>
+      .password-strength {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .strength-bar {
+        flex: 1;
+        height: 4px;
+        background: var(--border-color);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .strength-fill {
+        height: 100%;
+        width: 0%;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .strength-text {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        min-width: 80px;
+      }
+
+      .strength-weak .strength-fill {
+        width: 25%;
+        background: #ef4444;
+      }
+
+      .strength-fair .strength-fill {
+        width: 50%;
+        background: #f59e0b;
+      }
+
+      .strength-good .strength-fill {
+        width: 75%;
+        background: #3b82f6;
+      }
+
+      .strength-strong .strength-fill {
+        width: 100%;
+        background: #10b981;
+      }
+    </style>
+
+    <script>
+      function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const toggleIcon = document.getElementById("toggleIcon");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          toggleIcon.className = "fas fa-eye-slash";
+        } else {
+          passwordInput.type = "password";
+          toggleIcon.className = "fas fa-eye";
+        }
+      }
+
+      function checkPasswordStrength(password) {
+        const strengthBar = document.getElementById("passwordStrength");
+        const strengthText = document.getElementById("strengthText");
+
+        // Remove previous strength classes
+        strengthBar.className = "password-strength";
+
+        if (password.length === 0) {
+          strengthText.textContent = "Password strength";
+          return;
+        }
+
+        let score = 0;
+
+        // Length check
+        if (password.length >= 8) score++;
+        if (password.length >= 12) score++;
+
+        // Character variety checks
+        if (/[a-z]/.test(password)) score++;
+        if (/[A-Z]/.test(password)) score++;
+        if (/[0-9]/.test(password)) score++;
+        if (/[^A-Za-z0-9]/.test(password)) score++;
+
+        // Set strength based on score
+        if (score <= 2) {
+          strengthBar.classList.add("strength-weak");
+          strengthText.textContent = "Weak";
+        } else if (score <= 3) {
+          strengthBar.classList.add("strength-fair");
+          strengthText.textContent = "Fair";
+        } else if (score <= 4) {
+          strengthBar.classList.add("strength-good");
+          strengthText.textContent = "Good";
+        } else {
+          strengthBar.classList.add("strength-strong");
+          strengthText.textContent = "Strong";
+        }
+      }
+
+      // Add event listener for password strength
+      document
+        .getElementById("password")
+        .addEventListener("input", function (e) {
+          checkPasswordStrength(e.target.value);
+        });
+
+      // Add form validation
+      document.querySelector("form").addEventListener("submit", function (e) {
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+          e.preventDefault();
+          alert("Passwords do not match!");
+          return;
+        }
+
+        if (password.length < 8) {
+          e.preventDefault();
+          alert("Password must be at least 8 characters long!");
+          return;
+        }
+      });
+    </script>
+  </body>
+</html>

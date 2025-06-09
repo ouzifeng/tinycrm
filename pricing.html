@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing - TinyCRM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .pricing-card {
+        background: white;
+        border-radius: var(--radius-lg);
+        padding: 2.5rem 2rem;
+        box-shadow: var(--shadow-md);
+        position: relative;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .pricing-card.featured {
+        border-color: var(--primary-color);
+        transform: scale(1.05);
+      }
+
+      .pricing-card.featured::before {
+        content: "Most Popular";
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary-color);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: var(--radius-md);
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      .pricing-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .plan-name {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .plan-description {
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+      }
+
+      .plan-price {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 0.25rem;
+      }
+
+      .plan-period {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .features-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+      }
+
+      .features-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        padding: 0.5rem 0;
+      }
+
+      .features-list i {
+        color: var(--primary-color);
+        margin-right: 0.75rem;
+        width: 16px;
+      }
+
+      .plan-cta {
+        width: 100%;
+        margin-top: 1.5rem;
+      }
+
+      .faq-section {
+        margin-top: 4rem;
+      }
+
+      .faq-item {
+        background: white;
+        border-radius: var(--radius-md);
+        margin-bottom: 1rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .faq-question {
+        padding: 1.5rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+      }
+
+      .faq-question:hover {
+        background: var(--surface-color);
+      }
+
+      .faq-answer {
+        padding: 0 1.5rem 1.5rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-chart-line"></i>
+          <span>TinyCRM</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="features.html" class="nav-link">Features</a></li>
+          <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="login.html" class="nav-link login-btn">Login</a></li>
+          <li><a href="signup.html" class="nav-link signup-btn">Sign Up</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" style="min-height: 60vh; padding: 120px 0 60px">
+        <div class="container">
+          <div
+            class="hero-content"
+            style="grid-template-columns: 1fr; text-align: center; gap: 2rem"
+          >
+            <div class="hero-text">
+              <h1 class="hero-title" style="font-size: 3rem">
+                Simple, transparent pricing
+              </h1>
+              <p class="hero-subtitle">
+                Choose the plan that's right for your business. No hidden fees,
+                no surprises.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section style="padding: 60px 0">
+        <div class="container">
+          <div class="pricing-grid">
+            <!-- Starter Plan -->
+            <div class="pricing-card fade-in-up">
+              <div class="pricing-header">
+                <h3 class="plan-name">Starter</h3>
+                <p class="plan-description">
+                  Perfect for individuals and small teams
+                </p>
+                <div class="plan-price">$9</div>
+                <div class="plan-period">per user/month</div>
+              </div>
+              <ul class="features-list">
+                <li><i class="fas fa-check"></i> Up to 1,000 contacts</li>
+                <li><i class="fas fa-check"></i> Basic pipeline management</li>
+                <li><i class="fas fa-check"></i> Email integration</li>
+                <li><i class="fas fa-check"></i> Mobile app access</li>
+                <li><i class="fas fa-check"></i> Basic reporting</li>
+                <li><i class="fas fa-check"></i> 24/7 email support</li>
+              </ul>
+              <a href="signup.html" class="btn btn-outline plan-cta"
+                >Start Free Trial</a
+              >
+            </div>
+
+            <!-- Professional Plan -->
+            <div class="pricing-card featured fade-in-up delay-1">
+              <div class="pricing-header">
+                <h3 class="plan-name">Professional</h3>
+                <p class="plan-description">
+                  For growing businesses that need more power
+                </p>
+                <div class="plan-price">$29</div>
+                <div class="plan-period">per user/month</div>
+              </div>
+              <ul class="features-list">
+                <li><i class="fas fa-check"></i> Up to 10,000 contacts</li>
+                <li>
+                  <i class="fas fa-check"></i> Advanced pipeline management
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Email & calendar integration
+                </li>
+                <li><i class="fas fa-check"></i> Mobile app access</li>
+                <li>
+                  <i class="fas fa-check"></i> Advanced reporting & analytics
+                </li>
+                <li><i class="fas fa-check"></i> Automation workflows</li>
+                <li><i class="fas fa-check"></i> Custom fields & tags</li>
+                <li><i class="fas fa-check"></i> Priority support</li>
+              </ul>
+              <a href="signup.html" class="btn btn-primary plan-cta"
+                >Start Free Trial</a
+              >
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card fade-in-up delay-2">
+              <div class="pricing-header">
+                <h3 class="plan-name">Enterprise</h3>
+                <p class="plan-description">
+                  For large teams with advanced requirements
+                </p>
+                <div class="plan-price">$99</div>
+                <div class="plan-period">per user/month</div>
+              </div>
+              <ul class="features-list">
+                <li><i class="fas fa-check"></i> Unlimited contacts</li>
+                <li>
+                  <i class="fas fa-check"></i> Advanced pipeline management
+                </li>
+                <li><i class="fas fa-check"></i> Full integration suite</li>
+                <li><i class="fas fa-check"></i> Mobile app access</li>
+                <li>
+                  <i class="fas fa-check"></i> Custom reporting & dashboards
+                </li>
+                <li><i class="fas fa-check"></i> Advanced automation</li>
+                <li><i class="fas fa-check"></i> Custom fields & workflows</li>
+                <li><i class="fas fa-check"></i> API access</li>
+                <li><i class="fas fa-check"></i> Dedicated support manager</li>
+              </ul>
+              <a href="contact.html" class="btn btn-outline plan-cta"
+                >Contact Sales</a
+              >
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <div class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Can I change my plan at any time?</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                Yes! You can upgrade or downgrade your plan at any time. Changes
+                take effect immediately, and we'll prorate any billing
+                differences.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Is there a free trial?</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                Absolutely! We offer a 14-day free trial for all plans. No
+                credit card required to get started.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>What happens to my data if I cancel?</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                You can export all your data at any time. After cancellation,
+                your data is securely stored for 30 days before being
+                permanently deleted.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Do you offer discounts for annual billing?</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq-answer">
+                Yes! Save 20% when you choose annual billing. You can switch to
+                annual billing from your account settings at any time.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to get started?</h2>
+            <p>
+              Join thousands of businesses already using TinyCRM to grow their
+              revenue.
+            </p>
+            <a href="signup.html" class="btn btn-primary btn-large"
+              >Start Your Free Trial</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <i class="fas fa-chart-line"></i>
+              <span>TinyCRM</span>
+            </div>
+            <p>
+              The simplest CRM you'll ever use. Manage contacts, deals, and
+              follow-ups without the bloat.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="features.html">Features</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">Integrations</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Status</a></li>
+              <li><a href="#">Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            <p>&copy; 2024 TinyCRM. All rights reserved.</p>
+          </div>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
